@@ -1,0 +1,50 @@
+{
+  "startnode": "5",
+  "passages": [
+    {
+      "id": "5",
+      "name": "Oracle Service Proposal",
+      "text": "The proposal is to raise $1 million through restaked ETH to fund the development and deployment of a decentralized oracle service. Contributors will receive a prorated distribution of yield, potential profit-sharing, and the return of their principal at the end of the project.",
+      "links": [
+        { "name": "Learn About SSV and EigenPods", "target": "6" },
+        { "name": "Explore Project Structure", "target": "7" }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "SSV and EigenPods",
+      "text": "SSV (Secret Shared Validator) technology ensures the security and decentralized management of validators, while EigenPods help allocate restaked ETH to various yield-generating services.",
+      "links": [
+        { "name": "Back to Proposal", "target": "5" },
+        { "name": "Explore Project Structure", "target": "7" }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Project Structure Overview",
+      "text": "The project involves restaking 500 ETH through EigenLayer, with milestone-based payments to the contractor over 3 years. The oracle service will generate revenue through service fees, contributing to yield payments.",
+      "links": [
+        { "name": "Learn About Payment Milestones", "target": "8" },
+        { "name": "Continue to Next Section", "target": "10" }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Payment Milestones",
+      "text": "Payments are made based on the completion of milestones: $200,000 at the end of Year 1, $300,000 at the end of Year 2, and $300,000 at the end of Year 3. A final $200,000 payment is made upon project completion.",
+      "links": [
+        { "name": "Back to Project Structure", "target": "7" },
+        { "name": "Continue to Next Section", "target": "10" }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "End of Proposal",
+      "text": "You now understand the proposal for the decentralized oracle service. Let's move on to an overview of Eigenlayer, including AVS and wallet address management for yield.",
+      "links": [
+        { "name": "Go to Overview of Eigenlayer", "target": "11" }
+      ]
+    }
+  ]
+}
+

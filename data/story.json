@@ -1,0 +1,46 @@
+{
+  "startnode": "1",
+  "passages": [
+    {
+      "id": "1",
+      "name": "Start",
+      "text": "You wake up in a dark room. There is a door to your left and a window to your right.",
+      "links": [
+        { "name": "Go to the door", "target": "2" },
+        { "name": "Go to the window", "target": "3" }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Door",
+      "text": "The door is locked. You need a key to open it.",
+      "links": [
+        { "name": "Go back", "target": "1" }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Window",
+      "text": "You open the window and see a vast forest outside.",
+      "links": [
+        { "name": "Climb through the window", "target": "4" },
+        { "name": "Go back", "target": "1" }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Forest",
+      "text": "You climb through the window and find yourself in a dark, mysterious forest.",
+      "links": [
+        { "name": "Explore the forest", "target": "5" }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "End",
+      "text": "As you explore the forest, you realize this is just the beginning of your adventure...",
+      "links": []
+    }
+  ]
+}
+

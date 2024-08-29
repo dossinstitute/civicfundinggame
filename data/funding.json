@@ -1,0 +1,41 @@
+{
+  "startnode": "1",
+  "passages": [
+    {
+      "id": "1",
+      "name": "Introduction",
+      "text": "When a government entity or a decentralized community aims to create a large-scale public good or digital public good infrastructure project, they must efficiently raise resources, manage project execution, ensure accountability, and secure long-term sustainability. The key players involved in these processes—such as contributors, organizers, developers, and users—must align their efforts to achieve the project’s goals.",
+      "links": [
+        { "name": "Learn about Municipal Bonds", "target": "2" },
+        { "name": "Learn about Digital Infrastructure Funds", "target": "3" }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Municipal Bonds",
+      "text": "Municipal bonds are used to finance public good projects like parks, schools, and utilities. Investors purchase these bonds, providing capital to the government, which is then repaid with interest over time.",
+      "links": [
+        { "name": "Back to Introduction", "target": "1" },
+        { "name": "Learn about Digital Infrastructure Funds", "target": "3" }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Digital Infrastructure Funds",
+      "text": "Digital infrastructure funds support digital public good projects, such as decentralized services, by pooling resources from contributors. These funds are managed by smart contracts, ensuring resources are allocated correctly and that contributors receive their returns.",
+      "links": [
+        { "name": "Back to Introduction", "target": "1" },
+        { "name": "Continue to the Next Section", "target": "4" }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "End of Section",
+      "text": "You now understand the basics of how public infrastructure projects are funded, both traditionally and digitally. Let's move on to the proposal for a decentralized oracle service.",
+      "links": [
+        { "name": "Go to Decentralized Oracle Service Proposal", "target": "5" }
+      ]
+    }
+  ]
+}
+

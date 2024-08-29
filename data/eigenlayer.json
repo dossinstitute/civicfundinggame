@@ -1,0 +1,68 @@
+{
+  "startnode": "11",
+  "passages": [
+    {
+      "id": "11",
+      "name": "Introduction to Eigenlayer",
+      "text": "Eigenlayer allows users to restake their staked assets, such as ETH, to secure additional services beyond the Ethereum mainnet. This enables validators to extend their security to other decentralized applications, earning additional rewards.",
+      "links": [
+        { "name": "Learn About AVS", "target": "12" },
+        { "name": "Learn About Wallet Management", "target": "13" }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Active Validation Services (AVS)",
+      "text": "Active Validation Services (AVS) refer to the decentralized services that validators can secure through Eigenlayer. By participating in AVS, validators provide security to other protocols and earn additional rewards.",
+      "links": [
+        { "name": "Back to Eigenlayer Introduction", "target": "11" },
+        { "name": "Learn About Wallet Management", "target": "13" }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Wallet Address Management",
+      "text": "Yield generated from restaking through Eigenlayer is typically collected in the validator’s wallet address. With proper permissions, yield can be redirected to another address, such as a DAO's treasury, which is useful for supporting community projects.",
+      "links": [
+        { "name": "Back to Eigenlayer Introduction", "target": "11" },
+        { "name": "Continue to Set Up SSV and EigenPods", "target": "14" }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Setting Up SSV and EigenPods",
+      "text": "To secure the decentralized oracle service, you'll configure an EigenPod for staking and set up SSV for managing validators. This setup ensures that your staked ETH is secure and optimally utilized.",
+      "links": [
+        { "name": "Configure SSV", "target": "15" },
+        { "name": "Configure EigenPods", "target": "16" }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Configure SSV",
+      "text": "SSV splits validator keys among multiple operators to ensure no single entity controls the staked ETH. This reduces the risk of slashing and improves reliability.",
+      "links": [
+        { "name": "Back to Setup Overview", "target": "14" },
+        { "name": "Continue to EigenPods", "target": "16" }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Configure EigenPods",
+      "text": "EigenPods allow you to allocate your staked ETH to various yield-generating services. This setup helps optimize yield while maintaining security.",
+      "links": [
+        { "name": "Back to Setup Overview", "target": "14" },
+        { "name": "Complete Setup", "target": "17" }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "End of Overview",
+      "text": "You've successfully set up your SSV and EigenPods for the decentralized oracle service. Your staked ETH is now securely managed and generating yield.",
+      "links": [
+        { "name": "Start Over", "target": "1" }
+      ]
+    }
+  ]
+}
+
