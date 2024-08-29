@@ -1,0 +1,159 @@
+{
+  "startnode": "18",
+  "passages": [
+    {
+      "id": "18",
+      "name": "Introduction",
+      "text": "Welcome to the decentralized staking adventure! In this journey, you will learn how to set up a decentralized staking infrastructure using SSV (Secret Shared Validator) and EigenPods. Along the way, you’ll understand the key concepts of public goods, physical and digital infrastructure funding, restaking, and more. Ready to get started?",
+      "links": [
+        { "name": "Yes, let's get started", "target": "19" },
+        { "name": "Tell me more about SSV and EigenPods", "target": "20" }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Creating Your Validator Key",
+      "text": "The first step in your journey is to create a validator key. This key will be the backbone of your staking operation. You'll need to use the Ethereum Deposit CLI to generate the key.\n\n**Instructions:**\n1. [Download the Ethereum Deposit CLI](https://github.com/ethereum/staking-deposit-cli) for your operating system.\n2. Generate your validator key using the CLI. During the process, ensure that you set the correct withdrawal address to your EigenPod address.\n3. Save your key store file and deposit data file securely.",
+      "links": [
+        { "name": "Continue to Set Up SSV Operators", "target": "21" },
+        { "name": "Review how to create the validator key", "target": "22" }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "SSV and EigenPods Overview",
+      "text": "SSV (Secret Shared Validator) technology allows you to decentralize the management of your validator by splitting the key into multiple parts and distributing them among different operators. EigenPods help manage and optimize the restaked ETH by directing it into various yield-generating services, such as Ethereum 2.0 staking.",
+      "links": [
+        { "name": "Yes, let's start by creating the validator key", "target": "19" },
+        { "name": "Learn more about the roles of operators", "target": "23" }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Setting Up SSV Operators",
+      "text": "With your validator key ready, the next step is to distribute its control across several operators using SSV technology. This will involve splitting the key and choosing operators to manage your validator duties.\n\n**Instructions:**\n1. Use the [SSV web app](https://app.ssv.network) to upload your validator key.\n2. Select four operators to distribute the key. Make sure you consider performance, cost, and geographic distribution.\n3. Generate and distribute the key shares to the selected operators.",
+      "links": [
+        { "name": "Continue to deposit your 32 ETH", "target": "24" },
+        { "name": "I need help choosing operators", "target": "23" }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Review Creating the Validator Key",
+      "text": "To create your validator key, follow these steps:\n1. Download the [Ethereum Deposit CLI tool](https://github.com/ethereum/staking-deposit-cli) suitable for your operating system.\n2. Use the CLI to generate the validator key, specifying your EigenPod address as the withdrawal address.\n3. Save your key store file and deposit data file securely.",
+      "links": [
+        { "name": "Yes, let's set up SSV operators", "target": "21" },
+        { "name": "Learn more about EigenPods", "target": "20" }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Choosing Your Operators",
+      "text": "Selecting the right operators is crucial for maintaining the security and performance of your validator. Consider the following criteria:\n- Performance: Check the operator's uptime and reliability.\n- Cost: Review the fees charged by the operators.\n- Geographic Distribution: Ensure operators are distributed globally for better redundancy.\n\nAfter selecting your operators, you'll generate key shares to distribute among them.\n\n**Instructions:**\n1. Visit the [SSV web app](https://app.ssv.network) to explore operator options.\n2. Choose operators based on their performance, cost, and geographic distribution.\n3. Generate key shares and distribute them among your selected operators.",
+      "links": [
+        { "name": "Generate key shares and proceed", "target": "21" },
+        { "name": "Learn more about SSV technology", "target": "20" }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Depositing 32 ETH",
+      "text": "Now that your validator is set up with distributed key management, it's time to stake your 32 ETH. This step activates your validator and begins earning rewards.\n\n**Instructions:**\n1. Deposit 32 ETH to the Ethereum staking contract using your deposit data file.\n2. Verify your validator is active on the network.\n3. Monitor your rewards and operator performance regularly.",
+      "links": [
+        { "name": "Finalize setup and begin staking", "target": "25" },
+        { "name": "Go back to choose operators", "target": "23" }
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Finalizing Setup",
+      "text": "Congratulations! Your validator is now up and running with the SSV network, securing the Ethereum blockchain in a decentralized manner. You've successfully distributed the management of your validator, ensuring high availability and redundancy.\n\n**Final Steps:**\n1. Regularly monitor your validator's performance.\n2. Periodically review your operators' reliability and performance.\n3. Explore additional staking opportunities to further enhance your staking portfolio.\n\nWould you like to start over or explore additional resources?",
+      "links": [
+        { "name": "Start over and explore different setups", "target": "18" },
+        { "name": "Learn about additional staking opportunities", "target": "26" }
+      ]
+    },
+    {
+      "id": "26",
+      "name": "Learn about Additional Staking Opportunities",
+      "text": "Now that your validator is set up and running, you can explore additional staking opportunities within the Ethereum ecosystem. Consider setting up additional EigenPods, participating in governance, or contributing to decentralized projects.\n\nWhere would you like to go next?",
+      "links": [
+        { "name": "Go back to the beginning", "target": "18" },
+        { "name": "Learn about setting up EigenPods for other projects", "target": "27" }
+      ]
+    },
+    {
+      "id": "27",
+      "name": "Overview of Eigenlayer",
+      "text": "Eigenlayer is a protocol built on Ethereum that allows you to 'restake' your staked assets to secure additional services beyond the Ethereum mainnet. Here's how to set it up:\n\n**Instructions:**\n1. Visit the [Eigenlayer website](https://eigenlayer.io) to learn more and get started.\n2. Create your EigenPod, which will manage your restaked ETH.\n3. Use SSV to distribute your validator key securely.\n\nWould you like to continue to the full setup guide?",
+      "links": [
+        { "name": "Yes, take me to the full setup guide", "target": "28" },
+        { "name": "Go back to the staking opportunities", "target": "26" }
+      ]
+    },
+    {
+      "id": "28",
+      "name": "Setting Up SSV and EigenPods",
+      "text": "This guide will help you set up SSV and EigenPods for secure and decentralized staking.\n\n**Steps:**\n1. Create your EigenPod on the [Eigenlayer website](https://eigenlayer.io).\n2. Set your EigenPod address as the withdrawal address when creating your validator key.\n3. Distribute key shares using the [SSV web app](https://app.ssv.network).\n4. Deposit your 32 ETH to the Ethereum staking contract.\n\nAre you ready to generate key shares?",
+      "links": [
+        { "name": "Yes, let's generate key shares", "target": "29" },
+        { "name": "Go back to the overview", "target": "27" }
+      ]
+    },
+    {
+      "id": "29",
+      "name": "Generating Key Shares",
+      "text": "Once you have your validator key and EigenPod set up, it's time to generate key shares for distributed management.\n\n**Instructions:**\n1. Upload your key store file to the [SSV web app](https://app.ssv.network).\n2. Select your operators and generate key shares.\n3. Distribute the key shares to the operators.\n\nWould you like to proceed with staking your 32 ETH",
+      "links": [
+        { "name": "Yes, let's proceed", "target": "30" },
+        { "name": "Go back to the previous step", "target": "28" }
+      ]
+    },
+    {
+      "id": "30",
+      "name": "Staking Your 32 ETH",
+      "text": "You're now ready to stake your 32 ETH and activate your validator.\n\n**Instructions:**\n1. Deposit 32 ETH to the Ethereum staking contract using your deposit data file.\n2. Verify that your validator is active and earning rewards.\n3. Monitor the performance and reliability of your selected operators.",
+      "links": [
+        { "name": "Finalize and start staking", "target": "31" },
+        { "name": "Review generating key shares", "target": "29" }
+      ]
+    },
+    {
+      "id": "31",
+      "name": "Finalizing Your Setup",
+      "text": "Congratulations! Your validator is now live and securing the Ethereum network. Remember to regularly monitor your staking performance and operator reliability.\n\nWould you like to start over or explore more staking opportunities?",
+      "links": [
+        { "name": "Start over and try a different setup", "target": "18" },
+        { "name": "Explore additional staking opportunities", "target": "32" }
+      ]
+    },
+    {
+      "id": "32",
+      "name": "Explore Additional Staking Opportunities",
+      "text": "With your validator now active, you can consider expanding your staking portfolio. This might include setting up additional EigenPods or participating in other decentralized networks.",
+      "links": [
+        { "name": "Go back to the beginning", "target": "18" },
+        { "name": "Learn more about setting up additional EigenPods", "target": "33" }
+      ]
+    },
+    {
+      "id": "33",
+      "name": "Setting Up Additional EigenPods",
+      "text": "Setting up additional EigenPods allows you to manage more staking operations securely and efficiently. Follow these steps:\n\n1. Create a new EigenPod on the [Eigenlayer website](https://eigenlayer.io).\n2. Link it with your new validator key.\n3. Distribute key shares using the SSV web app.\n\nWould you like to continue staking or explore more options?",
+      "links": [
+        { "name": "Continue staking", "target": "34" },
+        { "name": "Explore more options", "target": "31" }
+      ]
+    },
+    {
+      "id": "34",
+      "name": "End of Overview",
+      "text": "You've successfully set up your SSV and EigenPods for decentralized staking. Your ETH is now securely managed and generating yield.\n\nWould you like to start over or explore further opportunities?",
+      "links": [
+        { "name": "Start over from the beginning", "target": "1" },
+        { "name": "Explore further opportunities", "target": "32" }
+      ]
+    }
+  ]
+}
+

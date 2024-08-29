@@ -60,7 +60,7 @@
       "name": "End of Overview",
       "text": "You've successfully set up your SSV and EigenPods for the decentralized oracle service. Your staked ETH is now securely managed and generating yield.",
       "links": [
-        { "name": "Start Over", "target": "1" }
+        { "name": "SSV Setup", "target": "18" }
       ]
     }
   ]

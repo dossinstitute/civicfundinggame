@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import fundingStory from '../data/funding.json';
 import proposalStory from '../data/proposal.json';
 import eigenlayerStory from '../data/eigenlayer.json';
+import ssvInstructionStory from '../data/ssv_instructions.json';
+import ReactMarkdown from 'react-markdown'; // Import react-markdown
+import styles from './TwineStory.module.css'; // Import the CSS module
 
 export default function TwineStory({ storyType }) {
   const [currentStory, setCurrentStory] = useState(() => {
@@ -14,6 +17,8 @@ export default function TwineStory({ storyType }) {
         return proposalStory;
       case 'eigenlayer':
         return eigenlayerStory;
+      case 'ssv_instructions':
+        return ssvInstructionStory;
       default:
         return fundingStory;
     }
@@ -39,8 +44,8 @@ export default function TwineStory({ storyType }) {
 
   const handleNavigation = (target) => {
     console.log(`Attempting to navigate to passage ID: ${target}`);
+
     if (target === '1') {
-      // Reset to the initial story (fundingStory) and passage
       setCurrentStory(fundingStory);
       setCurrentPassage('1');
     } else if (['5', '6', '7', '8', '10'].includes(target)) {
@@ -49,6 +54,9 @@ export default function TwineStory({ storyType }) {
     } else if (['11', '12', '13', '14', '15', '16', '17'].includes(target)) {
       setCurrentStory(eigenlayerStory);
       setCurrentPassage(target);
+    } else if (['18', '19', '20', '21', '22', '23', '24'].includes(target)) {
+      setCurrentStory(ssvInstructionStory);
+      setCurrentPassage(target);
     } else {
       setCurrentPassage(target);
     }
@@ -56,7 +64,9 @@ export default function TwineStory({ storyType }) {
 
   return (
     <div>
-      <p>{passage.text}</p>
+      <div className={styles.passageText}>
+        <ReactMarkdown>{passage.text}</ReactMarkdown> {/* Render Markdown */}
+      </div>
       <div>
         {passage.links.map((link) => (
           <button
@@ -65,7 +75,7 @@ export default function TwineStory({ storyType }) {
               console.log(`Navigating to passage ID: ${link.target}`);
               handleNavigation(link.target);
             }}
-            style={{ margin: '5px', padding: '10px', cursor: 'pointer' }}
+            className={styles.linkButton} // Apply the CSS module class
           >
             {link.name}
           </button>
