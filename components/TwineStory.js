@@ -5,8 +5,7 @@ import fundingStory from '../data/funding.json';
 import proposalStory from '../data/proposal.json';
 import eigenlayerStory from '../data/eigenlayer.json';
 import ssvInstructionStory from '../data/ssv_instructions.json';
-import ReactMarkdown from 'react-markdown'; // Import react-markdown
-import styles from './TwineStory.module.css'; // Import the CSS module
+import ReactMarkdown from 'react-markdown';
 
 export default function TwineStory({ storyType }) {
   const [currentStory, setCurrentStory] = useState(() => {
@@ -63,11 +62,21 @@ export default function TwineStory({ storyType }) {
   };
 
   return (
-    <div>
-      <div className={styles.passageText}>
-        <ReactMarkdown>{passage.text}</ReactMarkdown> {/* Render Markdown */}
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <div className="text-lg leading-relaxed text-gray-800">
+        <ReactMarkdown
+          components={{
+            a: ({ href, children }) => (
+              <a href={href} className="text-blue-500 underline hover:text-blue-700">
+                {children}
+              </a>
+            ),
+          }}
+        >
+          {passage.text}
+        </ReactMarkdown>
       </div>
-      <div>
+      <div className="mt-4 flex flex-wrap gap-4">
         {passage.links.map((link) => (
           <button
             key={link.name}
@@ -75,7 +84,7 @@ export default function TwineStory({ storyType }) {
               console.log(`Navigating to passage ID: ${link.target}`);
               handleNavigation(link.target);
             }}
-            className={styles.linkButton} // Apply the CSS module class
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
           >
             {link.name}
           </button>
