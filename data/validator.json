@@ -1,0 +1,96 @@
+{
+  "startnode": "50",
+  "passages": [
+    {
+      "id": "50",
+      "name": "Introduction to Holesky Validator Setup",
+      "text": "Welcome to the Holesky Testnet Validator Setup Guide. In this guide, you will configure Reth and Lighthouse to run a validator on the Holesky network. Ready to begin?",
+      "links": [
+        { "name": "Yes, let's get started", "target": "51" },
+        { "name": "Learn more about Reth and Lighthouse", "target": "52" }
+      ]
+    },
+    {
+      "id": "51",
+      "name": "Pull Docker Images",
+      "text": "First, pull the necessary Docker images for Reth and Lighthouse.\n\n```bash\nsudo docker pull ghcr.io/paradigmxyz/reth\nsudo docker pull sigp/lighthouse\n```\n\nNow, proceed to prepare the data storage.",
+      "links": [
+        { "name": "Prepare Data Storage", "target": "53" }
+      ]
+    },
+    {
+      "id": "52",
+      "name": "Learn About Reth and Lighthouse",
+      "text": "Reth is an Ethereum execution layer client, and Lighthouse is a consensus layer client. Both are required to run a validator on Ethereum’s Holesky testnet.\n\nWould you like to continue with the setup?",
+      "links": [
+        { "name": "Yes, let's continue", "target": "51" },
+        { "name": "Go back to Introduction", "target": "50" }
+      ]
+    },
+    {
+      "id": "53",
+      "name": "Prepare Data Storage",
+      "text": "Ensure that your `/dev/sda` drive is mounted at `/mnt/data` and that it has the correct permissions to store blockchain data.\n\n```bash\nsudo chown -R $USER:$USER /mnt/data\nsudo chmod -R 755 /mnt/data\n```\n\nOnce completed, we’ll generate the JWT secret for secure communication.",
+      "links": [
+        { "name": "Generate JWT Secret", "target": "54" }
+      ]
+    },
+    {
+      "id": "54",
+      "name": "Generate JWT Secret",
+      "text": "Generate a 32-byte JWT secret using `openssl` and save it to `/mnt/data/jwt.hex`.\n\n```bash\nopenssl rand -hex 32 | sudo tee /mnt/data/jwt.hex > /dev/null\n```\n\nVerify the secret was created:\n\n```bash\ncat /mnt/data/jwt.hex\n```\n\nNext, you'll set up and run the Reth node.",
+      "links": [
+        { "name": "Run Reth Node", "target": "55" }
+      ]
+    },
+    {
+      "id": "55",
+      "name": "Run Reth Node",
+      "text": "Run the Reth node with the manually generated JWT secret, ensuring that it uses `/mnt/data` for all data storage.\n\n```bash\nsudo docker run -d --name reth-holesky \\\n  --init \\\n  -v /mnt/data:/mnt/data \\\n  -p 8545:8545 \\\n  -p 8551:8551 \\\n  ghcr.io/paradigmxyz/reth \\\n  node --chain holesky --full \\\n  --datadir /mnt/data \\\n  --authrpc.jwtsecret /mnt/data/jwt.hex \\\n  --http \\\n  --http.addr 0.0.0.0 \\\n  --http.api eth,net,web3 \\\n  --authrpc.addr 0.0.0.0\n```\nOnce done, we will run the Lighthouse beacon node.",
+      "links": [
+        { "name": "Run Lighthouse Beacon Node", "target": "56" }
+      ]
+    },
+    {
+      "id": "56",
+      "name": "Run Lighthouse Beacon Node",
+      "text": "Run the Lighthouse beacon node, ensuring it connects to the Reth node using the correct JWT secret.\n\n1. Find the Reth container's IP address:\n\n```bash\nsudo docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' reth-holesky\n```\n2. Run Lighthouse:\n\n```bash\nsudo docker run -d --name lighthouse-holesky \\\n  --init \\\n  -v /mnt/data/lighthouse:/root/.lighthouse \\\n  -v /mnt/data:/mnt/data \\\n  -p 9000:9000/tcp -p 9000:9000/udp \\\n  sigp/lighthouse lighthouse \\\n  --network holesky beacon \\\n  --execution-endpoint http://<reth-container-ip>:8551 \\\n  --execution-jwt /mnt/data/jwt.hex\n```\nProceed to generate the validator deposit and keystore.",
+      "links": [
+        { "name": "Generate Validator Keystore", "target": "57" }
+      ]
+    },
+    {
+      "id": "57",
+      "name": "Generate Validator Keystore",
+      "text": "Use the Ethereum Staking Deposit CLI to generate the keystore and deposit data for your validator.\n\n1. Download the CLI:\n\n```bash\n./deposit new-mnemonic --chain=holesky\n```\n\n2. Copy the generated keys to the correct directories:\n\n```bash\ncp /path/to/keystore.json /mnt/data/keystores/\ncp /path/to/deposit_data.json /mnt/data/validator_keys/\n```\nOnce done, proceed to configure the validator client.",
+      "links": [
+        { "name": "Configure Validator Client", "target": "58" }
+      ]
+    },
+    {
+      "id": "58",
+      "name": "Configure Validator Client",
+      "text": "Configure the `validator_definitions.yml` file with the validator’s public key and suggested fee recipient.\n\nExample content:\n```yaml\n- enabled: true\n  voting_public_key: '0xMyPublicKey'\n  description: 'My Validator'\n  type: local_keystore\n  voting_keystore_path: '/root/.lighthouse/validators/keystore.json'\n  voting_keystore_password_path: '/root/.lighthouse/secrets/keystore_password.txt'\n  suggested_fee_recipient: '0xMyRecipientAddress'\n```\nOnce configured, you’re ready to run the validator client.",
+      "links": [
+        { "name": "Run Validator Client", "target": "59" }
+      ]
+    },
+    {
+      "id": "59",
+      "name": "Run Validator Client",
+      "text": "Run the Lighthouse validator client, ensuring it uses the correct keystore and connects to the beacon node.\n\n```bash\nsudo docker run -d --name lighthouse-vc \\\n  --init \\\n  -v /mnt/data/lighthouse:/root/.lighthouse \\\n  -v /mnt/data/keystores:/root/.lighthouse/validators \\\n  -p 5053:5052 \\\n  sigp/lighthouse lighthouse vc \\\n  --network holesky \\\n  --datadir /root/.lighthouse \\\n  --http \\\n  --beacon-nodes http://172.17.0.3:5052\n```\nFinally, verify syncing and JWT authentication to ensure everything is working.",
+      "links": [
+        { "name": "Verify Syncing and JWT", "target": "60" }
+      ]
+    },
+		{
+			"id": "60",
+			"name": "Verify Syncing and JWT",
+			"text": "Check the logs for Reth, Lighthouse beacon node, and Lighthouse validator client to ensure everything is synced and that JWT authentication is working.\n\n```bash\nsudo docker logs reth-holesky\nsudo docker logs lighthouse-holesky\nsudo docker logs lighthouse-vc\n```\nIf everything is successful, congratulations! You've successfully set up a validator on the Holesky testnet. Now, let's further secure your validator by setting it up with SSV (Secret Shared Validators).",
+			"links": [
+				{ "name": "Continue to SSV Setup", "target": "18" } 
+			]
+		}
+  ]
+}
+

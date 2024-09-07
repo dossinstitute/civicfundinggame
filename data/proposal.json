@@ -37,14 +37,14 @@
         { "name": "Continue to Next Section", "target": "10" }
       ]
     },
-    {
-      "id": "10",
-      "name": "End of Proposal",
-      "text": "You now understand the proposal for the decentralized oracle service. Let's move on to an overview of Eigenlayer, including AVS and wallet address management for yield.",
-      "links": [
-        { "name": "Go to Overview of Eigenlayer", "target": "11" }
-      ]
-    }
+		{
+			"id": "10",
+			"name": "End of Proposal",
+			"text": "You now understand the proposal for the decentralized oracle service. Let's move on to the setup for running a validator on the Holesky testnet.",
+			"links": [
+				{ "name": "Go to Holesky Validator Setup", "target": "50" }
+			]
+		}
   ]
 }
 

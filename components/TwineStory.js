@@ -5,6 +5,7 @@ import fundingStory from '../data/funding.json';
 import proposalStory from '../data/proposal.json';
 import eigenlayerStory from '../data/eigenlayer.json';
 import ssvInstructionStory from '../data/ssv_instructions.json';
+import validatorStory from '../data/validator.json';  // Importing the new validator.json file
 import ReactMarkdown from 'react-markdown';
 
 export default function TwineStory({ storyType }) {
@@ -18,6 +19,8 @@ export default function TwineStory({ storyType }) {
         return eigenlayerStory;
       case 'ssv_instructions':
         return ssvInstructionStory;
+      case 'validator':   // Adding the validator case
+        return validatorStory;
       default:
         return fundingStory;
     }
@@ -55,6 +58,9 @@ export default function TwineStory({ storyType }) {
       setCurrentPassage(target);
     } else if (['18', '19', '20', '21', '22', '23', '24'].includes(target)) {
       setCurrentStory(ssvInstructionStory);
+      setCurrentPassage(target);
+    } else if (['50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60'].includes(target)) { // Navigation for validator.json
+      setCurrentStory(validatorStory);
       setCurrentPassage(target);
     } else {
       setCurrentPassage(target);
