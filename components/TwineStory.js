@@ -68,35 +68,40 @@ export default function TwineStory({ storyType }) {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <div className="text-lg leading-relaxed text-gray-800">
-        <ReactMarkdown
-          components={{
-            a: ({ href, children }) => (
-              <a href={href} className="text-blue-500 underline hover:text-blue-700">
-                {children}
-              </a>
-            ),
-          }}
-        >
-          {passage.text}
-        </ReactMarkdown>
-      </div>
-      <div className="mt-4 flex flex-wrap gap-4">
-        {passage.links.map((link) => (
-          <button
-            key={link.name}
-            onClick={() => {
-              console.log(`Navigating to passage ID: ${link.target}`);
-              handleNavigation(link.target);
+    <div
+      className="p-6 min-h-screen flex flex-col justify-center items-center bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage: "url('Cityimage.webp')",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        backgroundBlendMode: "overlay"
+      }}
+    >
+      <div className="max-w-lg bg-gray-800 border border-gray-700 p-8 rounded-md shadow-lg text-white">
+        <div className="text-lg leading-relaxed mb-6">
+          <ReactMarkdown
+            components={{
+              a: ({ href, children }) => (
+                <a href={href} className="text-red-500 underline hover:text-red-700">
+                  {children}
+                </a>
+              ),
             }}
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
           >
-            {link.name}
-          </button>
-        ))}
+            {passage.text}
+          </ReactMarkdown>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-4">
+          {passage.links.map((link) => (
+            <button
+              key={link.name}
+              onClick={() => handleNavigation(link.target)}
+              className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors"
+            >
+              {link.name}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
-  );
+  );  
 }
-
